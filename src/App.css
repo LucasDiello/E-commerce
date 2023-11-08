@@ -1,3 +1,4 @@
+
 *{
   margin: 0;
   box-sizing: border-box;
@@ -74,3 +75,6 @@ label {
   width: 1px;
   overflow: hidden;
 }
+
+.shadow-items {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;}

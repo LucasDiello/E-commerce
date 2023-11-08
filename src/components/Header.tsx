@@ -1,15 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
 import "../tailwind.css";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu, AiFillCloseCircle } from "react-icons/ai";
 import { BsCart3 } from "react-icons/bs";
+import Menu from "./Menu";
+import { getSearchItem } from "../services/fetch";
+import { useItemsContext } from "../context/ItemsContext";
 
 function Login() {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
+  const { setItems } = useItemsContext();
+
+  const handClick = () => {
+    setMenuOpen(!menuOpen);
+  }
+
+  const handleSearch = async () => {
+    const searchItem = await getSearchItem(searchValue);
+    setItems(searchItem.data.results);
+  }
+
+
   return (
     <>
       <header className="flex p-4 header-login h-28 items-center">
-        <button className="mr-[1.5rem] mb-9">
-          {<AiOutlineMenu size="30px" />}
+        <button onClick={handClick} className="mr-[1.5rem] mb-9">
+        {menuOpen ? <AiFillCloseCircle className="close-icon" size="40" /> : <AiOutlineMenu size="30" /> }
+        {menuOpen && <Menu/>}
         </button>
         <div>
           <h1 className="text-2xl text-gray-300">ByteBuy</h1>
@@ -21,10 +40,11 @@ function Login() {
                 id="search"
                 type="search"
                 placeholder="Search..."
+                onChange={(e) => setSearchValue(e.target.value)}
                 autoFocus
                 required
               />
-              <button className="submit" type="submit">
+              <button onClick={handleSearch} className="submit" type="submit">
                 Go
               </button>
             </form>
