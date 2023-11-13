@@ -4,7 +4,7 @@
   height: 400px;
   width: fit-content;
   margin: -20px;
-  margin-top: -60px;
+  margin-top: 170px;
   border-radius: var(--cornerRad);
   background-color: rgb(231, 231, 231);
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
@@ -40,14 +40,19 @@
   filter: brightness(200%);
 }
 
+.menu button:active {
+  transform: scale(0.9);
+  
+}
+
 @keyframes menuAnim {
   0% {
     opacity: 0.4;
-    height: 0;
+    height: 312;
   }
   100% {
       opacity: 1; /* Opacidade final */
-      height: 312px;
+      height: 300px;
   }
 }
 

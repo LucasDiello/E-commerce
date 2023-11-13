@@ -4,10 +4,43 @@
   box-sizing: border-box;
 }
 
+
 .header-login {
   background: rgb(19,17,17);
 background: linear-gradient(90deg, rgba(19,17,17,1) 11%, rgba(147,45,45,1) 50%, rgba(26,26,29,1) 80%);
+position: fixed;
+width: 100%;
+
 }
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  width: 312px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  padding: 0 8px;
+  scroll-snap-align: start;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.btn-caroussel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+  }
+
+.btn-caroussel:active {
+ color: #2f2f2f;
+}
+
 
 :root {
   --rad: .7rem;
@@ -21,7 +54,7 @@ background: linear-gradient(90deg, rgba(19,17,17,1) 11%, rgba(147,45,45,1) 50%, 
   --bez: cubic-bezier(0, 0, 0.43, 1.49);
 }
 
-form {
+.form-search {
   position: relative;
   background: var(--color-brand);
   border-radius: var(--rad);

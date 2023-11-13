@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "../menu.css"
-import { getCategories } from '../services/fetch'
+import { getCategories, getProductsFromCategoryAndQuery } from '../services/fetch'
+import { useItemsContext } from '../context/ItemsContext';
 
 function Menu() {
 
@@ -9,7 +10,8 @@ function Menu() {
     name: string;
   }
   
-  const [categories, setCategories] = useState<Category[]>([]);
+  const [categories, setCategories] = useState([]);
+  const { setItems } = useItemsContext();
 
   useEffect(() => {
     (async () => {
@@ -17,12 +19,12 @@ function Menu() {
       const desiredIds = ["MLB1039", "MLB1051", "MLB5726", "MLB1000", "MLB1144"];
       const filteredCategories = data.filter((category : Category ) => desiredIds.includes(category.id));
       setCategories(filteredCategories);
-      console.log(filteredCategories)
     })();
   },[])
 
-  const handleClick = (category) => {
-    console.log(category)
+  const handleClick = async (category : Category) => {
+    const { data } = await getProductsFromCategoryAndQuery(category.id, category.name);
+    setItems(data.results);
   }
 
   return (
