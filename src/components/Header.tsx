@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import Modal from "react-modal";
+Modal.setAppElement(document.body);
+import { useState } from "react";
 import "../App.css";
 import "../tailwind.css";
 import {
@@ -12,9 +14,9 @@ import Menu from "./Menu";
 import { getSearchItem } from "../services/fetch";
 import { useItemsContext } from "../context/ItemsContext";
 import logoIMG from "../img/logo.png";
-import Modal from "react-modal";
 import Cart from "./Cart";
 import CartLowScreen from "./CartLowScreen";
+
 
 function Login() {
   const [menuOpen, setMenuOpen] = useState(false);

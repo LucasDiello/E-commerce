@@ -7,8 +7,8 @@ function FavCards() {
       {
         destaques.map((destaque) => {
           return (
-              <div className='p-10 '>
-            <div key={destaque.id} className='card-fixed w-[280px] bg-black rounded-md flex flex-col justify-center items-center'>
+              <div className='p-10 ' key={destaque.id}>
+            <div className='card-fixed w-[280px] bg-black rounded-md flex flex-col justify-center items-center'>
               <img src={destaque.img} className='opacity-40 rounded-md w-[100%] h-[400px] object-cover' />
             </div>
             <div>

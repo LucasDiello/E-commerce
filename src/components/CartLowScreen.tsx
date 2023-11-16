@@ -2,7 +2,8 @@ import Item from '../interfaces/Item'
 import { useItemsContext } from '../context/ItemsContext';
 import { AiOutlineDelete } from "react-icons/ai";
 import { PiTruckLight } from "react-icons/pi";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
+import Toastfy from './Toastfy';
 
 
 function CartLowScreen({itemsCart } : {itemsCart: Item[]}) {
@@ -61,18 +62,7 @@ function CartLowScreen({itemsCart } : {itemsCart: Item[]}) {
                 <button onClick={verifyFrete}
                  className='h-10 p-2 font-bold  bg-gray-200 frete-minscreen text-sm'>Calcular FRETE</button>
             </div>
-            <ToastContainer
-            position="top-left"
-             autoClose={5000}
-             hideProgressBar={true}
-             newestOnTop={false}
-             closeOnClick
-             rtl={false}
-             pauseOnFocusLoss
-             draggable
-             pauseOnHover
-             theme="light"
-            />
+            <Toastfy />
     <div className=' mt-20 flex justify-between items-center'>
         <h1 className='font-bold text-2xl'>Total:</h1>
         <div>
