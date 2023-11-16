@@ -1,0 +1,72 @@
+.menu {
+  position: absolute;
+  z-index: 10;
+  height: 400px;
+  width: fit-content;
+  margin: -20px;
+  margin-top: 170px;
+  border-radius: var(--cornerRad);
+  background-color: rgb(231, 231, 231);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  opacity: 0.4; /* Defina a opacidade inicial */
+  animation: menuAnim 1s forwards; /* Inicie a animação ao mostrar o menu */
+  transition: opacity 0.5s; /* Adicione uma transição de 0.5 segundos ao fechar o menu */
+
+}
+
+.menu button {
+  padding: 12px 50px;
+  margin: 0 16px;
+  color: var(--secoColor);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  text-align: center;
+  transition: filter 200ms linear 0s;
+}
+
+.menu button:nth-of-type(1) {
+  padding-top: 24px;
+}
+
+.menu button:nth-last-of-type(1) {
+  border-bottom: none;
+}
+
+.menu button:hover {
+  filter: brightness(200%);
+}
+
+.menu button:active {
+  transform: scale(0.9);
+  
+}
+
+@keyframes menuAnim {
+  0% {
+    opacity: 0.4;
+    height: 312;
+  }
+  100% {
+      opacity: 1; /* Opacidade final */
+      height: 300px;
+  }
+}
+
+
+.close-icon {
+  position: relative;
+  z-index: 12;
+  right: 15px;
+  bottom: 14px;
+  transition: opacity 0.5s; /* Adicione uma transição de 0.5 segundos à opacidade do ícone */
+}
+
+.carousel > img {
+  object-fit: cover; /* or cover, contain, etc. */
+  width: 50px;
+  height: 50px;
+}

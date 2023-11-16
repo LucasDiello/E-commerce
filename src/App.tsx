@@ -1,16 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Route, Switch } from 'react-router-dom'
 import './App.css'
+import products from './pages/Products'
+import Login from './pages/Login'
+import Cart from './components/Cart'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-    <h1>INITIAL PROJECT</h1>
-    </>
-    
+    <div>
+      <Switch>
+        <Route path="/" exact component={Login}/>
+        <Route path="/products" exact component={products}/>
+        <Route path="/cart" exact component={Cart}/>
+      </Switch>
+    </div>
     )
 }
 
