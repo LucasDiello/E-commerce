@@ -29,4 +29,4 @@
 2 - Carrinho de Compras: Navegue, adicione ou remova itens do carrinho de forma intuitiva.
 
 ## Autor
-- [@nome_usuario](https://github.com/LucasDiello)
+- [@LucasDiello](https://github.com/LucasDiello)
