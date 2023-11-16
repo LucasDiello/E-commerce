@@ -10,7 +10,7 @@
 background: linear-gradient(90deg, rgba(19,17,17,1) 11%, rgba(147,45,45,1) 50%, rgba(26,26,29,1) 80%);
 position: fixed;
 width: 100%;
-
+z-index: 100;
 }
 
 .carousel {
@@ -109,5 +109,63 @@ label {
   overflow: hidden;
 }
 
-.shadow-items {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;}
+.shadow-items, .card-container {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.shadow-items:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+  .btn-buy {
+    color: rgb(112, 41, 41);
+  }
+
+  .btn-buy:active {
+    color: rgb(0, 0, 0);
+    transform: scale(0.9);
+  }
+
+  .title-card {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif  ;
+  }
+
+  .card-fixed {
+    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.5);
+  }
+  
+
+  .title-destaques {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif  ;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    }
+
+  .destaques {
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif  ;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    letter-spacing: 4px;
+  }
+
+  .price-minscreen, .title-minscreen {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .cart-minscreen {
+    width: 100px !important ; 
+    border-bottom: 1px solid rgb(180, 180, 180) !important;
+    border-radius: 0% !important;
+  }
+
+  .frete-minscreen, .btnfinish-minscreen, .text-minscreen {
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .btnfinish-minscreen {
+    letter-spacing: 3px;
+    font-size: 20px;
+  }
+

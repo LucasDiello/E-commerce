@@ -4,6 +4,8 @@ import Item from "../interfaces/Item";
 type ItemsContextType = {
   items: Item[];
   setItems: Dispatch<SetStateAction<Item[]>>;
+  cart: Item[];
+  setCart: Dispatch<SetStateAction<Item[]>>;
 };
 
 const ItemsContext = createContext<ItemsContextType | undefined>(undefined);

@@ -5,6 +5,7 @@ import { useItemsContext } from '../context/ItemsContext';
 import { getProductsFromCategoryAndQuery, getSearchItem } from '../services/fetch';
 import Items from '../components/Items';
 import Footer from '../components/Footer';
+import FavCards from '../components/FavCards';
 
 function Products() {
   const { items, setItems } = useItemsContext();
@@ -39,26 +40,27 @@ function Products() {
   };
   
   return (
-    <main>
-    <Header />
-    <section className=' flex justify-center flex-wrap'>
-      <div className='mt-36 flex btn-prev'>
-      <button className='btn-caroussel' onClick={scrollLeft}>
-          <AiOutlineArrowLeft size="30px" />
-        </button>
-      <div className='carousel md:w-[1000px]  ' ref={carouselRef}>
-        {Items(itemsCaroussel, false)}
-      </div>
-      <button className='btn-caroussel' onClick={scrollRight}>
-      <AiOutlineArrowRight size="30px" />
-        </button>
-      </div>
-      <div className='w-[100%] mt-5 flex flex-wrap p-1 justify-center items-center'>
+    <><main className='bg-gray-200 mb-10'>
+      <Header />
+      <section className='lg:p-10  flex justify-center flex-wrap'>
+        <div className='mt-36 flex btn-prev md:hidden'>
+          <button className='btn-caroussel' onClick={scrollLeft}>
+            <AiOutlineArrowLeft size="30px" />
+          </button>
+          <div className='carousel md:w-[1000px]  ' ref={carouselRef}>
+            {Items(itemsCaroussel, false)}
+          </div>
+          <button className='btn-caroussel' onClick={scrollRight}>
+            <AiOutlineArrowRight size="30px" />
+          </button>
+        </div>
+        <FavCards />
+        <div className='w-[100%] mt-5 flex flex-wrap p-1 justify-center items-center'>
           {Items(items, true)}
-      </div>
-    </section>
-    <Footer />
-</main>  
+        </div>
+      </section>
+    </main>
+    <Footer /></>
 
 )
 }

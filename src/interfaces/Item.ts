@@ -6,4 +6,4 @@ type Item = {
     price: number;
     };
 
-    export default Item;
+export default Item;

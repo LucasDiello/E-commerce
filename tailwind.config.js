@@ -9,8 +9,8 @@ export const theme = {
     epilogue: ['Epilogue', 'sans-serif'],
   },
   screens: {
-    xs: '0px',
-    md: '700px',
+    xs: { max: '500px'},
+    md: '500px',
     lg: '1024px',
   },
 }
