@@ -55,7 +55,7 @@ function Products() {
           </button>
         </div>
         <FavCards />
-        <div className='w-[100%] mt-5 flex flex-wrap p-1 justify-center items-center'>
+        <div className='w-[100%] mt-5 flex flex-wrap xs:mb-10 p-1 justify-center items-center'>
           {Items(items, true)}
         </div>
       </section>

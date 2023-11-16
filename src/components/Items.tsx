@@ -18,7 +18,7 @@ function Items(items: Item[], detailedView: boolean) {
          <img src={item.thumbnail} alt={item.title} />
            <h3 className='text-[10px] mt-3 title-card'>{item.title.substring(0, detailedView ? 60 : 10)}</h3>
            {detailedView && (
-             <div className='flex justify-between w-full h-[50px footer-card'>
+             <div className='flex justify-between w-full  footer-card'>
                <p className='mt-2'>{item.price} R$</p>
                <button onClick={() => handleCart(item)} className='btn-buy mt-2 h-0'>Comprar</button>
              </div>

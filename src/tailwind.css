@@ -890,6 +890,10 @@ video {
     top: 0px;
   }
 
+  .xs\:mb-10 {
+    margin-bottom: 2.5rem;
+  }
+
   .xs\:hidden {
     display: none;
   }
