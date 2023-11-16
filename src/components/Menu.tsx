@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import "../menu.css"
 import { getCategories, getProductsFromCategoryAndQuery } from '../services/fetch'
 import { useItemsContext } from '../context/ItemsContext';
