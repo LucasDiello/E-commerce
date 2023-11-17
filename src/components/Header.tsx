@@ -90,8 +90,8 @@ function Login() {
                 Go
               </button>
             </form>
-              <button onClick={openModal} className="h-2 ml-4">
-                <BsCart3 size="25px" className="md:w-0" />
+              <button onClick={openModal} className="h-7 ml-4">
+                <BsCart3 size="20px" className="md:w-0 text-gray-300" />
               </button>
           </div>
           <div className="md:w-[250px] flex xs:hidden md:block">
