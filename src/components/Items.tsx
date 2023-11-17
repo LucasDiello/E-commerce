@@ -30,14 +30,14 @@ function Items(items: Item[]) {
 
   return ( <div className='flex flex-wrap mt-5 justify-center '>
   {  currentItems.map((item : Item) => {
-      return <div key={item.id} className={'xs:w-[180px]  p-2 mb-10 w-[250px] '}>
+      return <div key={item.id} className={'xs:w-[180px] p-2 mb-10 w-[250px] '}>
         <div className='border-2 border-solid h-[200px] rounded-2xl bg-white flex justify-center items-center'>
          <img className='h-[100px] w-[100px]  ' src={item.thumbnail} alt={item.title} />
         </div>
          <div className='border-2 border-solid  h-20'>
            <h3 className=' mt-4  title-card'>{item.title.substring(0, 45)}</h3>
              <div className='flex justify-between mt-4 h-[100% items-center] '>
-               <p className=''>{item.price} R$</p>
+               <p className='font-bold'>R${item.price}</p>
                <button onClick={() => handleCart(item)} className='btn-buy  h-0'>Comprar</button>
              </div>
          </div>

@@ -44,7 +44,7 @@ function Login() {
 
   const customStyles = {
     content: {
-      top: `${isMobile ? "10%" : "4%"}`,
+      top: `${isMobile ? "13%" : "4%"}`,
       height: "87%",
       width: `${isMobile ? "100%" : "50%"}`,
       left: `${isMobile ? "0%" : "56.7%"}`,
@@ -72,10 +72,9 @@ function Login() {
           <div>
             <h1 className="text-2xl text-gray-300 font-header">ByteBuy</h1>
             <p className="text-xs mb-2 ml-5 font-header text-[rgb(192,190,190)]">www.ByteBuy.netlify.com</p>
-          </div>
           <div className="flex">
             <form
-              className="form-search md:w-[1000px]"
+              className="form-search md:w-[100%]"
               onSubmit={(e) => e.preventDefault()}
               role="search"
             >
@@ -84,7 +83,6 @@ function Login() {
                 type="search"
                 placeholder="Search..."
                 onChange={(e) => setSearchValue(e.target.value)}
-                className="md:w-[1000px]"
                 />
               <button className="submit" onClick={handleSearch} type="submit">
                 Go
@@ -94,9 +92,10 @@ function Login() {
                 <BsCart3 size="20px" className="md:w-0 text-gray-300" />
               </button>
           </div>
+          </div>
           <div className="md:w-[250px] flex xs:hidden md:block">
             <button className="flex items-center" onClick={openModal}>
-              <h2 className="mr-2 text-gray-300 font-header ">Open Cart</h2>
+              <h2 className="mr-2 text-gray-300 font-header md:text-sm">Open Cart</h2>
               <span>
                 {" "}
                 <AiOutlineArrowRight size="20px" className="text-gray-300" />

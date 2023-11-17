@@ -8,6 +8,7 @@ import Toastfy from './Toastfy';
 
 function CartLowScreen({itemsCart } : {itemsCart: Item[]}) {
     const { setCart } = useItemsContext();
+    const isMinMobile = window.innerWidth <= 400;
 
   
     const handleDelete = (id: string) => {
@@ -32,7 +33,7 @@ function CartLowScreen({itemsCart } : {itemsCart: Item[]}) {
 
   return (
     <section className='h-[100%] border-2 bg-[rgb(248,248,248)]'>
-      <div className=' p-10 h-[100%] mt-6'>
+      <div className={`${isMinMobile ? 'p-0' : 'p-10'} h-[100%] mt-6`}>
         <div className=' h-[20vh] overflow-x-auto'>
             {itemsCart.map((item) => {
                 return (
