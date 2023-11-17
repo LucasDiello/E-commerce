@@ -111,7 +111,9 @@ function Login() {
         style={customStyles}
       >
         {!isMobile ? (
-          <Cart itemsCart={cart} />
+         <>
+         <button onClick={closeModal} className="absolute right-[140px] top-[70px] z-40 p-4"> <MdClose size="35px" color="#6d819c" /> </button><Cart itemsCart={cart} />
+         </>
           ) : (
           <>
             <CartLowScreen itemsCart={cart} />

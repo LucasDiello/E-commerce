@@ -7,13 +7,11 @@ import Cart from './components/Cart'
 function App() {
 
   return (
-    <div>
       <Switch>
         <Route path="/" exact component={Login}/>
         <Route path="/products" exact component={products}/>
         <Route path="/cart" exact component={Cart}/>
       </Switch>
-    </div>
     )
 }
 

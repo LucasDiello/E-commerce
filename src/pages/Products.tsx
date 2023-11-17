@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import FavCards from '../components/FavCards';
 
 function Products() {
-  const { items, setItems } = useItemsContext();
+  const { setItems, items } = useItemsContext();
 
   useEffect(() => {
     (async() => {
@@ -18,14 +18,21 @@ function Products() {
 
   
   return (
-    <><main className='bg-gray-200'>
-      <Header />
-        <FavCards />
-      <section className=' border-2 border-black xs:p-0 flex justify-center p-8 flex-wrap'>
-          {Items(items)}
-      </section>
-    </main>
-    <Footer /></>
+    <>
+    { 
+    items.length === 0 ? <div className='h-[100vh] w-[100%] bg-gray-200 flex justify-center items-center'>Loading...</div> :
+      <>
+      <main className='bg-gray-200'>
+          <Header />
+          <FavCards />
+          <section className=' xs:p-0 flex justify-center p-8 flex-wrap'>
+            <Items />
+          </section>
+        </main><Footer />
+        </>
+
+    }
+    </>
 
 )
 }

@@ -33,7 +33,7 @@ function CartLowScreen({itemsCart } : {itemsCart: Item[]}) {
 
   return (
     <section className='h-[100%] border-2 bg-[rgb(248,248,248)]'>
-      <div className={`${isMinMobile ? 'p-0' : 'p-10'} h-[100%] mt-6`}>
+      <div className={`${isMinMobile ? 'p-0' : 'p-10'} h-[100%] ${isMinMobile ? 'mt-10' : 'mt-6'}`}>
         <div className=' h-[20vh] overflow-x-auto'>
             {itemsCart.map((item) => {
                 return (
@@ -64,7 +64,7 @@ function CartLowScreen({itemsCart } : {itemsCart: Item[]}) {
                  className='h-10 p-2 font-bold  bg-gray-200 frete-minscreen text-sm'>Calcular FRETE</button>
             </div>
             <Toastfy />
-    <div className=' mt-20 flex justify-between items-center'>
+    <div className={`${isMinMobile ? 'mt-10' : 'mt-20'}  flex justify-between items-center`}>
         <h1 className='font-bold text-2xl'>Total:</h1>
         <div>
         <h2 className='text-right'>R${itemsCart.length ? totalValue.toFixed(2) : "0"}</h2>
