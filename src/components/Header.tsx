@@ -59,19 +59,19 @@ function Login() {
 
   return (
     <>
-      <header className="flex p-4 header-login h-28 items-center">
+      <header className="flex p-8 xs:p-3 header-login h-28 items-center">
         <button onClick={handClick} className="mr-[1.5rem] mb-9">
           {menuOpen ? (
             <AiFillCloseCircle className="close-icon" size="40" />
-          ) : (
-            <AiOutlineMenu size="30" />
-          )}
+            ) : (
+              <AiOutlineMenu size="30" />
+              )}
         </button>
         {menuOpen && <Menu />}
         <div className="md:flex md:items-center md:w-[100%] md:justify-between ">
           <div>
-            <h1 className="text-2xl text-gray-300">ByteBuy</h1>
-            <p className="text-xs mb-2 ml-5">www.ByteBuy.netlify.com</p>
+            <h1 className="text-2xl text-gray-300 font-header">ByteBuy</h1>
+            <p className="text-xs mb-2 ml-5 font-header text-[rgb(192,190,190)]">www.ByteBuy.netlify.com</p>
           </div>
           <div className="flex">
             <form
@@ -85,7 +85,7 @@ function Login() {
                 placeholder="Search..."
                 onChange={(e) => setSearchValue(e.target.value)}
                 className="md:w-[1000px]"
-              />
+                />
               <button className="submit" onClick={handleSearch} type="submit">
                 Go
               </button>
@@ -96,7 +96,7 @@ function Login() {
           </div>
           <div className="md:w-[250px] flex xs:hidden md:block">
             <button className="flex items-center" onClick={openModal}>
-              <h2 className="mr-2 text-gray-300 ">Open Cart</h2>
+              <h2 className="mr-2 text-gray-300 font-header ">Open Cart</h2>
               <span>
                 {" "}
                 <AiOutlineArrowRight size="20px" className="text-gray-300" />
@@ -113,7 +113,7 @@ function Login() {
       >
         {!isMobile ? (
           <Cart itemsCart={cart} />
-        ) : (
+          ) : (
           <>
             <CartLowScreen itemsCart={cart} />
             <button

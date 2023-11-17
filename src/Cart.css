@@ -349,6 +349,4 @@ button:focus { outline:0; }
   .checkout {
     flex-direction: column;
   }
-
-  /* Add more styles for responsiveness as needed */
 }
