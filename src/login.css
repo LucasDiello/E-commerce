@@ -10,7 +10,7 @@
     color: #ffffff;
     letter-spacing: 1px;
     background: rgb(19,17,17);
-    background: linear-gradient(90deg, rgba(19,17,17,1) 11%, rgba(147,45,45,1) 50%, rgba(26,26,29,1) 80%);
+    background: linear-gradient(90deg, rgba(19,17,17,1) 11%, rgb(70, 68, 68) 50%, rgba(26,26,29,1) 80%);
 }
 
 .login-container {
@@ -51,7 +51,6 @@
 }
 
 .login-container form button {
-    background-color: rgb(19,17,17);
     color: #ffffff;
     display: block;
     padding: 13px;
@@ -154,7 +153,16 @@
 
 @media (max-width: 470px) {
     .illustration {
-        right: -10px;
+        right: -0px;
     }
+
+    .circle-two {
+        right: 60px;
+    }
+}
     
+.disabled {
+    cursor: not-allowed;
+    background-color: black;
+    opacity: 0.5;
 }

@@ -44,7 +44,7 @@ function Login() {
 
   const customStyles = {
     content: {
-      top: `${isMobile ? "10%" : "4%"}`,
+      top: `${isMobile ? "13%" : "4%"}`,
       height: "87%",
       width: `${isMobile ? "100%" : "50%"}`,
       left: `${isMobile ? "0%" : "56.7%"}`,
@@ -59,23 +59,22 @@ function Login() {
 
   return (
     <>
-      <header className="flex p-4 header-login h-28 items-center">
+      <header className="flex p-8 xs:p-3 header-login h-28 items-center">
         <button onClick={handClick} className="mr-[1.5rem] mb-9">
           {menuOpen ? (
             <AiFillCloseCircle className="close-icon" size="40" />
-          ) : (
-            <AiOutlineMenu size="30" />
-          )}
+            ) : (
+              <AiOutlineMenu size="30" />
+              )}
         </button>
         {menuOpen && <Menu />}
         <div className="md:flex md:items-center md:w-[100%] md:justify-between ">
           <div>
-            <h1 className="text-2xl text-gray-300">ByteBuy</h1>
-            <p className="text-xs mb-2 ml-5">www.ByteBuy.netlify.com</p>
-          </div>
+            <h1 className="text-2xl text-gray-300 font-header">ByteBuy</h1>
+            <p className="text-xs mb-2 ml-5 font-header text-[rgb(192,190,190)]">www.ByteBuy.netlify.com</p>
           <div className="flex">
             <form
-              className="form-search md:w-[1000px]"
+              className="form-search md:w-[100%]"
               onSubmit={(e) => e.preventDefault()}
               role="search"
             >
@@ -84,19 +83,19 @@ function Login() {
                 type="search"
                 placeholder="Search..."
                 onChange={(e) => setSearchValue(e.target.value)}
-                className="md:w-[1000px]"
-              />
+                />
               <button className="submit" onClick={handleSearch} type="submit">
                 Go
               </button>
             </form>
-              <button onClick={openModal} className="h-2 ml-4">
-                <BsCart3 size="25px" className="md:w-0" />
+              <button onClick={openModal} className="h-7 ml-4">
+                <BsCart3 size="20px" className="md:w-0 text-gray-300" />
               </button>
+          </div>
           </div>
           <div className="md:w-[250px] flex xs:hidden md:block">
             <button className="flex items-center" onClick={openModal}>
-              <h2 className="mr-2 text-gray-300 ">Open Cart</h2>
+              <h2 className="mr-2 text-gray-300 font-header md:text-sm">Open Cart</h2>
               <span>
                 {" "}
                 <AiOutlineArrowRight size="20px" className="text-gray-300" />
@@ -112,8 +111,10 @@ function Login() {
         style={customStyles}
       >
         {!isMobile ? (
-          <Cart itemsCart={cart} />
-        ) : (
+         <>
+         <button onClick={closeModal} className="absolute right-[140px] top-[70px] z-40 p-4"> <MdClose size="35px" color="#6d819c" /> </button><Cart itemsCart={cart} />
+         </>
+          ) : (
           <>
             <CartLowScreen itemsCart={cart} />
             <button
