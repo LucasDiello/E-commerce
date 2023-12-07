@@ -18,7 +18,7 @@
 |:------------------------------:|:--------------------------------------------------------------------------------------------------------------:|
 | Linguagem de programação       | ![TypeScript](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg)           |
 | Framework de desenvolvimento  | ![React](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg)                          |
-| Estilização                    | ![Bootstrap](https://https://tailwindcss.com/)              |
+| Estilização                    | ![Tailwind](https://https://tailwindcss.com/)              |
 
 </details>
 
