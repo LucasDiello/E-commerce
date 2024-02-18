@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom"; // Importe useHistory para fazer o redirecionamento
+import { useHistory } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Cookies from "js-cookie";
 import "../login.css";
-import imageLogin from "../img/Captura de tela de 2024-02-17 22-37-04.png";
+import imageLogin from "../img/logo.png";
 
 function Login() {
   const [loginClicked, setLoginClicked] = useState(false);
@@ -10,26 +12,37 @@ function Login() {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
-  const history = useHistory(); 
+  const history = useHistory();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
     const savedEmail = Cookies.get("email");
     const savedPassword = Cookies.get("password");
 
-    if (loginClicked && email === savedEmail && password === savedPassword) {
+    if (email === savedEmail && password === savedPassword) {
       history.push("/products");
       if (rememberMe) {
         Cookies.set("rememberMe", "true", { expires: 30 });
       }
-    } else {
+    } else if (!loginClicked) {
       Cookies.set("email", email);
       Cookies.set("password", password);
       Cookies.set("name", name);
+      if (email && password && name) {
+        toast.success("Conta criada com sucesso!");  
+      } else {
+        toast.error("Preencha todos os campos corretamente.");
+      }
+    } else {
+      toast.error(
+        "Email ou senha incorretos. Por favor, verifique suas credenciais."
+      );
     }
   };
 
   return (
     <main className="flex h-[100vh] flex-wrap !overflow-hidden">
+      <ToastContainer />
       <section className="flex bg-[rgb(4,3,12)] items-center p-4 justify-center w-full lg:w-[40%]">
         <form className="border-2 lg:mr-16 border-none">
           <div>
@@ -94,7 +107,12 @@ function Login() {
           <div className="w-full flex justify-between">
             <div className="flex w-52 items-center space-x-2">
               <p className="text-sm text-gray-400">Remember me for 30 days</p>
-              <input type="checkbox" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} className="!w-5 !h-10" />
+              <input
+                type="checkbox"
+                checked={rememberMe}
+                onChange={(e) => setRememberMe(e.target.checked)}
+                className="!w-5 !h-10"
+              />
             </div>
             <button className="border-none text-orange-300">
               Forgot password?
@@ -152,7 +170,12 @@ function Login() {
               Caso tenha alguma dúvida, entre em contato conosco!
             </p>
           </div>
-          <img className="img-login absolute bottom-0 w-[60%]" src={imageLogin} alt="" />
+          <img
+            className="img-login"
+            src={imageLogin}
+            alt=""
+            
+          />
         </div>
       </section>
     </main>

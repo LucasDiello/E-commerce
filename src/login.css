@@ -25,3 +25,10 @@
     transition: opacity .3s !important;
    }
    
+
+   .img-login {
+    position: absolute;
+    right: 7rem;
+    top: 18rem;
+    transform: rotate(-50deg);
+   }
