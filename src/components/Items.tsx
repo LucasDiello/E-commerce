@@ -15,7 +15,6 @@ function Items() {
 
   const smoothScrollToTop = () => {
     window.scrollTo({
-      top: 100,
       behavior: "smooth",
     });
   };
@@ -40,10 +39,10 @@ function Items() {
   
   return (
     
-    <div className="flex flex-wrap mt-5 justify-center ">
+    <div className="flex flex-wrap mt-5  ">
        <TransitionGroup component={null}>
       {currentItems.map((item: Item, index : number) => {
-        return ( <CSSTransition key={item.id} timeout={500} classNames='item'>
+        return ( <CSSTransition key={item.id} timeout={700} classNames='item'>
           <div  className="xs:w-[180px] p-2 mb-10 w-[250px] " style={{ animationDelay: `${index * 100}ms` }}>
             <div className=" h-[200px] rounded-2xl bg-white flex justify-center items-center">
               <img

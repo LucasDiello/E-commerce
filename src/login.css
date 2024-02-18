@@ -1,168 +1,46 @@
-.container-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "poppins";
-    background: #1a1a2e;
-    color: #ffffff;
-    letter-spacing: 1px;
-    background: rgb(19,17,17);
-    background: linear-gradient(90deg, rgba(19,17,17,1) 11%, rgb(70, 68, 68) 50%, rgba(26,26,29,1) 80%);
+*{
+    overflow: hidden;
 }
 
-.login-container {
+.input {
+    line-height: 28px !important;
+    border: 2px solid transparent !important;
+    border-bottom-color: #777 !important;
+    padding: .2rem 0 !important;
+    outline: none !important;
+    background-color: transparent !important;
+    color: white !important;
+    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+   }
+   
+   .input:focus, input:hover {
+    outline: none !important;
+    padding: .2rem 1rem !important;
+    border-radius: 1rem !important;
+    border-color: #7a9cc6 !important;
+   }
+   
+   .input::placeholder {
+    color: #777 ;
+   }
+   
+   .input:focus::placeholder {
+    opacity: 0 !important;
+    transition: opacity .3s !important;
+   }
+   
+.img-login {
+    transform: rotate(-20deg);
     position: absolute;
-    width: 22.2rem;
+    height: 40rem;
+    border-radius: 20px;
+    top: 40%;
+    left: 50%;
+    opacity: 80%;
 }
-.form-container {
-    position: relative;
-    border: 1px solid hsla(0, 0%, 65%, 0.158);
-    box-shadow: 0 0 36px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    backdrop-filter: blur(20px);
-    z-index: 99;
-    padding: 2rem;
-
-}
-
-.login-container form input {
-    display: block;
-    padding: 14.5px;
-    width: 100%;
-    margin: 2rem 0;
-    color: #ffffff;
-    outline: none;
-    background-color: #9191911f;
-    border: none;
-    border-radius: 5px;
-    font-weight: 500;
-    letter-spacing: 0.8px;
-    font-size: 15px;
-    backdrop-filter: blur(15px);
-
-}
-
-.login-container form input:focus {
-    box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.2);
-    animation: wobble 0.3s ease-in;
-}
-
-.login-container form button {
-    color: #ffffff;
-    display: block;
-    padding: 13px;
-    border-radius: 5px;
-    outline: none;
-    font-size: 18px;
-    letter-spacing: 1.5px;
-    font-weight: bold;
-    width: 100%;
-    cursor: pointer;
-    margin-bottom: 2rem;
-    transition: all 0.1s ease-in-out;
-    border: none;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-
-}
-
-.login-container form button:hover {
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
-    transform: scale(1.02);
-}
-
-.circle {
-    width: 8rem;
-    height: 8rem;
-    background: rgb(19,17,17);
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    position: absolute;
-}
-
-.illustration {
-    position: absolute;
-    top: -32%;
-    right: -150px;
-    width: 100%;
-}
-
-.circle-one {
-    top: 0;
-    left: 0;
-    z-index: 10;
-    opacity: 0.7;
-    transform: translate(-45%, -45%);
-}
-
-.circle-two {
-    bottom: 0;
-    right: 0;
-    opacity: 0.7;
-    z-index: 10;
-    transform: translate(45%, 45%);
-}
-
-.register-forget {
-    margin: 1rem 0;
-    display: flex;
-    justify-content: space-between;
-}
-.opacity {
-    opacity: 0.6;
-}
-
-.theme-btn-container {
-    position: absolute;
-    left: 0;
-    bottom: 2rem;
-}
-
-.theme-btn {
-    cursor: pointer;
-    transition: all 0.3s ease-in;
-}
-
-.theme-btn:hover {
-    width: 40px !important;
-}
-
-@media (max-width: 768px) {
-
-    .illustration {
-        top: -18%;
-        right: -50px;
-        width: 50%;
-    }
-    .form-container {
-        backdrop-filter: none;
-    }
-    
-    .circle-two {
-        right: 40px;
-    }
-}
-
-@media (max-width: 470px) {
-    .illustration {
-        right: -0px;
-    }
-
-    .circle-two {
-        right: 60px;
-    }
-}
-    
-.disabled {
-    cursor: not-allowed;
-    background-color: black;
-    opacity: 0.5;
-}
+   
+   
+   
+   
+   
+   
