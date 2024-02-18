@@ -64,7 +64,7 @@ function Login() {
           {menuOpen ? (
             <AiFillCloseCircle className="close-icon" size="40" />
             ) : (
-              <AiOutlineMenu size="30" />
+              <AiOutlineMenu size="30" color="gray" />
               )}
         </button>
         {menuOpen && <Menu />}

@@ -28,7 +28,8 @@ function Products() {
           <section className=' xs:p-0 flex justify-center p-8 flex-wrap'>
             <Items />
           </section>
-        </main><Footer />
+        </main>
+        <Footer />
         </>
 
     }
