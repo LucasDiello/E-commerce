@@ -1,13 +1,36 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom"; // Importe useHistory para fazer o redirecionamento
+import Cookies from "js-cookie";
 import "../login.css";
-import imageLogin from "../img/Captura de tela de 2024-02-17 18-26-59.png";
+import imageLogin from "../img/Captura de tela de 2024-02-17 22-37-04.png";
 
 function Login() {
   const [loginClicked, setLoginClicked] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
+  const history = useHistory(); 
+
+  const handleSubmit = () => {
+    const savedEmail = Cookies.get("email");
+    const savedPassword = Cookies.get("password");
+
+    if (loginClicked && email === savedEmail && password === savedPassword) {
+      history.push("/products");
+      if (rememberMe) {
+        Cookies.set("rememberMe", "true", { expires: 30 });
+      }
+    } else {
+      Cookies.set("email", email);
+      Cookies.set("password", password);
+      Cookies.set("name", name);
+    }
+  };
 
   return (
-    <main className="flex h-[100vh] flex-wrap">
-      <section className="flex bg-[rgb(4,3,12)] items-center justify-center w-full lg:w-[40%]">
+    <main className="flex h-[100vh] flex-wrap !overflow-hidden">
+      <section className="flex bg-[rgb(4,3,12)] items-center p-4 justify-center w-full lg:w-[40%]">
         <form className="border-2 lg:mr-16 border-none">
           <div>
             <h1 className="text-5xl font-bold mb-5 text-white">
@@ -35,6 +58,8 @@ function Login() {
               type="email"
               autoComplete="email"
               placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             {loginClicked && (
               <input
@@ -42,6 +67,8 @@ function Login() {
                 type="password"
                 placeholder="Password"
                 autoComplete="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             )}
           </div>
@@ -52,25 +79,32 @@ function Login() {
                 type="text"
                 name="name"
                 placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
               <input
                 className="input"
                 type="password"
-                placeholder="Repeat password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
           )}
           <div className="w-full flex justify-between">
             <div className="flex w-52 items-center space-x-2">
               <p className="text-sm text-gray-400">Remember me for 30 days</p>
-              <input type="checkbox" className="!w-5 !h-10" />
+              <input type="checkbox" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} className="!w-5 !h-10" />
             </div>
             <button className="border-none text-orange-300">
               Forgot password?
             </button>
           </div>
           <div>
-            <button className="btn text-orange-300 bg-gray-900 h-16 rounded-lg w-full">
+            <button
+              className="btn text-orange-300 bg-gray-900 h-16 rounded-lg w-full"
+              onClick={handleSubmit}
+            >
               {loginClicked ? "Login" : "Create account"}
             </button>
           </div>
@@ -80,16 +114,22 @@ function Login() {
             ) : (
               <span className="text-gray-400">Already have an account?</span>
             )}
-             {
-              loginClicked && (
-                <button onClick={() => setLoginClicked(false)} className="text-orange-300">sign up</button>
-              )
-             }
-             {
-              !loginClicked && (
-                <button onClick={() => setLoginClicked(true)} className="text-orange-300">sign in</button>
-              )
-             }
+            {loginClicked && (
+              <button
+                onClick={() => setLoginClicked(false)}
+                className="text-orange-300"
+              >
+                Sign up
+              </button>
+            )}
+            {!loginClicked && (
+              <button
+                onClick={() => setLoginClicked(true)}
+                className="text-orange-300"
+              >
+                Sign in
+              </button>
+            )}
           </div>
         </form>
       </section>
@@ -101,7 +141,7 @@ function Login() {
         }}
         className="lg:flex w-full hidden lg:w-[60%]"
       >
-        <div>
+        <div className="w-full">
           <div className="p-32">
             <h1 className="text-5xl text-white font-bold mb-5">
               E-commerce para você!
@@ -112,7 +152,7 @@ function Login() {
               Caso tenha alguma dúvida, entre em contato conosco!
             </p>
           </div>
-          <img className="img-login" src={imageLogin} alt="" />
+          <img className="img-login absolute bottom-0 w-[60%]" src={imageLogin} alt="" />
         </div>
       </section>
     </main>

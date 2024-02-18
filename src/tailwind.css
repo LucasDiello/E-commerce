@@ -558,6 +558,10 @@ video {
   top: 70px;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .z-40 {
   z-index: 40;
 }
@@ -626,10 +630,6 @@ video {
   margin-top: 1.5rem;
 }
 
-.mb-20 {
-  margin-bottom: 5rem;
-}
-
 .flex {
   display: flex;
 }
@@ -640,6 +640,10 @@ video {
 
 .\!h-10 {
   height: 2.5rem !important;
+}
+
+.\!h-20 {
+  height: 5rem !important;
 }
 
 .h-10 {
@@ -694,14 +698,6 @@ video {
   height: 40px;
 }
 
-.\!h-14 {
-  height: 3.5rem !important;
-}
-
-.\!h-20 {
-  height: 5rem !important;
-}
-
 .\!w-5 {
   width: 1.25rem !important;
 }
@@ -732,6 +728,22 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[50\%\] {
+  width: 50%;
+}
+
+.w-\[70\%\] {
+  width: 70%;
+}
+
+.w-\[60\%\] {
+  width: 60%;
+}
+
+.w-\[61\%\] {
+  width: 61%;
 }
 
 .flex-\[50\%\] {
@@ -768,6 +780,10 @@ video {
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.\!overflow-hidden {
+  overflow: hidden !important;
+}
+
 .overflow-x-auto {
   overflow-x: auto;
 }
@@ -788,6 +804,10 @@ video {
   border-width: 2px;
 }
 
+.border-\[1px\] {
+  border-width: 1px;
+}
+
 .border-b-\[1px\] {
   border-bottom-width: 1px;
 }
@@ -799,11 +819,6 @@ video {
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
-
-.border-pink-900 {
-  --tw-border-opacity: 1;
-  border-color: rgb(131 24 67 / var(--tw-border-opacity));
 }
 
 .bg-\[rgb\(19\2c 17\2c 17\)\] {
@@ -841,6 +856,11 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .p-0 {
   padding: 0px;
 }
@@ -853,28 +873,16 @@ video {
   padding: 0.5rem;
 }
 
+.p-32 {
+  padding: 8rem;
+}
+
 .p-4 {
   padding: 1rem;
 }
 
 .p-8 {
   padding: 2rem;
-}
-
-.p-20 {
-  padding: 5rem;
-}
-
-.p-40 {
-  padding: 10rem;
-}
-
-.p-32 {
-  padding: 8rem;
-}
-
-.p-44 {
-  padding: 11rem;
 }
 
 .pb-4 {
@@ -920,11 +928,6 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 
 .font-bold {
@@ -977,6 +980,10 @@ video {
 
 .opacity-90 {
   opacity: 0.9;
+}
+
+.opacity-80 {
+  opacity: 0.8;
 }
 
 .filter {

@@ -1,7 +1,3 @@
-*{
-    overflow: hidden;
-}
-
 .input {
     line-height: 28px !important;
     border: 2px solid transparent !important;
@@ -28,19 +24,4 @@
     opacity: 0 !important;
     transition: opacity .3s !important;
    }
-   
-.img-login {
-    transform: rotate(-20deg);
-    position: absolute;
-    height: 40rem;
-    border-radius: 20px;
-    top: 40%;
-    left: 50%;
-    opacity: 80%;
-}
-   
-   
-   
-   
-   
    
