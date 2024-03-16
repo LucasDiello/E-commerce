@@ -30,3 +30,7 @@
 
 ## Autor
 - [@LucasDiello](https://github.com/LucasDiello)
+
+## Caso queira visualizar
+
+### bytebuy.netlify.app
